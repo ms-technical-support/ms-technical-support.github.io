@@ -8,3 +8,4 @@ Contact for every app on this site: ms.technicalsup@outlook.com
 | App | Support | Privacy |
 | --- | --- | --- |
 | Arrow Escape | /arrow-escape/support/ | /arrow-escape/privacy/ |
+| Lexiday | /lexiday/support/ | /lexiday/privacy/ |
