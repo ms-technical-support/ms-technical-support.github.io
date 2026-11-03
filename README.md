@@ -9,3 +9,4 @@ Contact for every app on this site: ms.technicalsup@outlook.com
 | --- | --- | --- |
 | Arrow Escape | /arrow-escape/support/ | /arrow-escape/privacy/ |
 | Lexigrow | /lexigrow/support/ | /lexigrow/privacy/ |
+| Only 1% | /only1/support/ | /only1/privacy/ |
