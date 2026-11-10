@@ -1,0 +1,25 @@
+# Only 1%: бесплатный Supabase ставит проект на паузу, если к нему 7 дней никто не обращается.
+# Раз в 2 дня спрашиваем таблицу лучших (только чтение) — сервер рейтинга не засыпает.
+# Ключ публичный: тот же publishable key, что вшит в саму игру.
+name: Only 1% — Supabase не засыпает
+
+on:
+  schedule:
+    - cron: '23 5 */2 * *'
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/only1-supabase-keepalive.yml
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Запрос к рейтингу Only 1%
+        run: |
+          curl -sS --fail --retry 3 --retry-delay 20 -m 30 -X POST \
+            "https://unnfhgpenxcpnjbvxega.supabase.co/rest/v1/rpc/puzzle_top" \
+            -H "apikey: sb_publishable_1PDOXgjYQ_LIjCJlC1Matg_ZVr9bA07" \
+            -H "Content-Type: application/json" \
+            -d '{"p_puzzle":"l-1","p_device":"00000000000000000000000000000000"}'
